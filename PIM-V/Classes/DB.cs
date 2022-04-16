@@ -190,5 +190,33 @@ namespace PIM_V.Classes
 
             return text;
         }
+
+        public DataTable CustomSql(string sql, bool insert = false)
+        {
+            SQLiteDataAdapter da;
+            DataTable dt = new DataTable();
+            try
+            {
+                using (var cmd = DbConnection().CreateCommand())
+                {
+                    cmd.CommandText = sql;
+                    if (insert)
+                    {
+                        cmd.ExecuteNonQuery();
+                    } else
+                    {
+                        da = new SQLiteDataAdapter(cmd.CommandText, DbConnection());
+                        da.Fill(dt);
+                        return dt;
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+
+            return null;
+        }
     }
 }
