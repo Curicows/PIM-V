@@ -5,37 +5,38 @@ namespace PIM_V.Classes
 {
     public abstract class Model
     {
-        private Db database;
-        private long? id;
-        private string table_name = "";
-        private string[] columns = {};
+        private Db _database;
+        private long? _id;
+        private string _tableName = "";
+        private string[] _columns = {};
+        private string[] _columnsView = {};
 
         public Model()
         {
-            this.database = new Db();
+            this._database = new Db();
         }
 
-        public Collection GetAll()
+        public Collection GetAll(bool view = false)
         {
             Collection collection = new Collection();
-            collection.FillCollection(this.database.GetAll(this), this);
+            collection.FillCollection(this._database.GetAll(this, view), this, view);
             return collection;
         }
 
         private void Insert()
         {
-            long id = this.database.Insert(this);
+            long id = this._database.Insert(this);
             this.SetId(id);
         }
 
         private void Update()
         {
-            this.database.Update(this);
+            this._database.Update(this);
         }
 
         public void Save()
         {
-            if (this.id == null)
+            if (this._id == null)
             {
                 this.Insert();
             }
@@ -47,62 +48,72 @@ namespace PIM_V.Classes
 
         public void Delete()
         {
-            this.database.Delete(this);
+            this._database.Delete(this);
         }
 
         public void Find(long id)
         {
             this.SetId(id);
-            DataTable dataTable = this.database.GetOne(this);
+            DataTable dataTable = this._database.GetOne(this);
             this.FillModel(dataTable);
         }
 
         public string GetTableName()
         {
-            return this.table_name;
+            return this._tableName;
         }
         
-        public void SetTableName(string table_name)
+        public void SetTableName(string tableName)
         {
-            this.table_name = table_name;
+            this._tableName = tableName;
         }
 
         public string[] GetColumns()
         {
-            return this.columns;
+            return this._columns;
         }
         
         public void SetColumns(string[] columns)
         {
-            this.columns = columns;
+            this._columns = columns;
+        }
+        
+        public string[] GetColumnsView()
+        {
+            return this._columnsView;
+        }
+        
+        public void SetColumnsView(string[] columnsView)
+        {
+            this._columnsView = columnsView;
         }
         
         public long? GetId()
         {
-            return id;
+            return _id;
         }
 
         public void SetId(long id)
         {
-            this.id = id;
+            this._id = id;
         }
 
         public abstract Dictionary<string, string> ToDict();
 
-        public void FillModel(DataTable dataTable)
+        public void FillModel(DataTable dataTable, bool view = false)
         {
             foreach (DataRow dataTableRow in dataTable.Rows)
             {
-                this.FillModel(dataTableRow);
+                this.FillModel(dataTableRow, view);
                 break;
             }
         }
 
-        public void FillModel(DataRow dataTable)
+        public void FillModel(DataRow dataTable, bool view = false)
         {
-            this.SetValues(dataTable.ItemArray);
+            this.SetValues(dataTable.ItemArray, view);
         }
 
-        protected abstract void SetValues(object[] value);
+        protected abstract void SetValues(object[] value, bool view = false);
     }
 }

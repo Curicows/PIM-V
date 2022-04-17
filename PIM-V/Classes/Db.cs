@@ -36,10 +36,10 @@ namespace PIM_V.Classes
             return _sqliteConnection;
         }
 
-        public DataTable GetAll(Model model)
+        public DataTable GetAll(Model model, bool view = false)
         {
             string table = model.GetTableName();
-            string[] columns = model.GetColumns();
+            string[] columns = view ? model.GetColumnsView() : model.GetColumns();
             string columnsString = this.ToColumnsString(columns);
             SQLiteDataAdapter da;
             DataTable dt = new DataTable();
