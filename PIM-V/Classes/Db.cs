@@ -2,12 +2,19 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SQLite;
+using System.IO;
 
 namespace PIM_V.Classes
 {
     public class Db
     {
         private SQLiteConnection _sqliteConnection;
+        private Migration _migration;
+
+        public Db()
+        {
+            this._migration = new Migration();
+        }
 
         private SQLiteConnection DbConnection()
         {
@@ -15,7 +22,15 @@ namespace PIM_V.Classes
             string directoryPath = System.IO.Path.GetDirectoryName(exePath);
             directoryPath = directoryPath.Replace("\\bin\\Debug","");
             string dataSource = $"{directoryPath}\\database.sqlite";
-        
+            
+            bool fileExist = File.Exists(dataSource);
+
+            if (!fileExist)
+            {
+                SQLiteConnection.CreateFile(dataSource);
+                this._migration.Migrate();
+            }
+            
             _sqliteConnection = new SQLiteConnection($"Data Source={dataSource}; Version=3;");
             _sqliteConnection.Open();
             return _sqliteConnection;
