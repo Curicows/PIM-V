@@ -9,10 +9,15 @@ namespace PIM_V.Models
 {
     internal class Inventario : Model
     {
-        private string fabricante;
-        private string modelo;
-        private string dataCompra;
-        private int equipamentoId;
+        private string _fabricante;
+        private string _modelo;
+        private string _dataCompra;
+        private int _equipamentoId;
+        private string _equipamentoNome;
+        private Equipamento _equipamento;
+        private int _usuarioId;
+        private string _usuarioNome;
+        private Usuario _usuario;
         
         public Inventario()
         {
@@ -26,42 +31,72 @@ namespace PIM_V.Models
 
         public string GetFabricante()
         {
-            return this.fabricante;
+            return this._fabricante;
         }
 
         public void SetFabricante(string fabricante)
         {
-            this.fabricante = fabricante;
+            this._fabricante = fabricante;
         }
         
         public string GetModelo()
         {
-            return this.modelo;
+            return this._modelo;
         }
 
         public void SetModelo(string modelo)
         {
-            this.modelo = modelo;
+            this._modelo = modelo;
         }
 
         public string GetDataCompra()
         {
-            return this.dataCompra;
+            return this._dataCompra;
         }
 
         public void SetDataCompra(string dataCompra)
         {
-            this.dataCompra = dataCompra;
+            this._dataCompra = dataCompra;
         }
 
         public int GetEquipamentoId()
         {
-            return this.equipamentoId;
+            return this._equipamentoId;
         }
 
         public void SetEquipamentoId(int equipamentoId)
         {
-            this.equipamentoId = equipamentoId;
+            this._equipamentoId = equipamentoId;
+        }
+
+        public string GetEquipamentoNome()
+        {
+            return this._modelo;
+        }
+
+        public void SetEquipamentoNome(string modelo)
+        {
+            this._modelo = modelo;
+        }
+        
+        public int GetUsuarioId()
+        {
+            return this._usuarioId;
+        }
+
+        public void SetUsuarioId(int usuarioId)
+        {
+            this._usuarioId = usuarioId;
+        }
+        
+        public string GetUsuarioNome()
+        {
+            return this._modelo;
+        }
+
+        public void SetUsuarioNome(string modelo)
+        {
+            this._modelo = modelo;
         }
 
         public override Dictionary<string, string> ToDict()
