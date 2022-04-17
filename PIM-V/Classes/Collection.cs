@@ -5,17 +5,17 @@ namespace PIM_V.Classes
 {
     public class Collection
     {
-        private Model[] models;
+        private Model[] _models;
         private DataTable _dataTable;
 
         public void SetModels(Model[] models)
         {
-            this.models = models;
+            this._models = models;
         }
 
         public Model[] GetModels()
         {
-            return this.models;
+            return this._models;
         }
         
         public void SetDataTable(DataTable dataTable)
@@ -28,7 +28,7 @@ namespace PIM_V.Classes
             return this._dataTable;
         }
 
-        public void FillCollection(DataTable table, Model model)
+        public void FillCollection(DataTable table, Model model, bool view = false)
         {
             this.SetDataTable(table);
             Model[] models = new Model[table.Rows.Count];
@@ -36,7 +36,7 @@ namespace PIM_V.Classes
             foreach (DataRow tableRow in table.Rows)
             {
                 Model del = (Model)Activator.CreateInstance(model.GetType());
-                del.FillModel(tableRow);
+                del.FillModel(tableRow, view);
                 models[i] = del;
                 i++;
             }

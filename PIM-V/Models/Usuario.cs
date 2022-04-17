@@ -5,10 +5,10 @@ namespace PIM_V.Models
 {
     public class Usuario: Model
     {
-        private string nome;
-        private string login;
-        private string senha;
-        private string email;
+        private string _nome;
+        private string _login;
+        private string _senha;
+        private string _email;
 
         public Usuario()
         {
@@ -17,47 +17,52 @@ namespace PIM_V.Models
             {
                 "id", "nome", "login", "senha", "email"
             };
+            string[] columnsView =
+            {
+                "id", "nome", "login", "email"
+            };
             this.SetColumns(columns);
+            this.SetColumnsView(columnsView);
         }
         
         public string GetNome()
         {
-            return this.nome;
+            return this._nome;
         } 
         
         public string GetLogin()
         {
-            return this.login;
+            return this._login;
         } 
         
         public string GetSenha()
         {
-            return this.senha;
+            return this._senha;
         } 
         
         public string GetEmail()
         {
-            return this.email;
+            return this._email;
         } 
         
         public void SetNome(string nome) 
         {
-            this.nome = nome;
+            this._nome = nome;
         }
 
         public void SetLogin(string login) 
         {
-            this.login = login;
+            this._login = login;
         }
 
         public void SetSenha(string senha) 
         {
-            this.senha = senha;
+            this._senha = senha;
         }
 
         public void SetEmail(string email) 
         {
-            this.email = email;
+            this._email = email;
         }
 
         public override Dictionary<string, string> ToDict()
@@ -70,7 +75,7 @@ namespace PIM_V.Models
             return dict;
         }
 
-        protected override void SetValues(object[] value)
+        protected override void SetValues(object[] value, bool view = false)
         {
             this.SetId((long)value[0]);
             this.SetNome((string)value[1]);

@@ -12,10 +12,11 @@ namespace PIM_V.Models
         private string _fabricante;
         private string _modelo;
         private string _dataCompra;
-        private int _equipamentoId;
+        private string _dataReserva;
+        private long? _equipamentoId;
         private string _equipamentoNome;
         private Equipamento _equipamento;
-        private int _usuarioId;
+        private long? _usuarioId;
         private string _usuarioNome;
         private Usuario _usuario;
         
@@ -24,9 +25,14 @@ namespace PIM_V.Models
             this.SetTableName("inventario");
             string[] columns =
             {
-                "id", "fabricante", "modelo", "data_compra", "equipamento_id"
+                "id", "fabricante", "modelo", "data_compra", "data_reserva", "nome_equipamento", "nome_usuario", "equipamento_id", "usuario_id"
+            };
+            string[] columnsView =
+            {
+                "id", "fabricante", "modelo", "data_compra", "data_reserva", "nome_equipamento", "nome_usuario"
             };
             this.SetColumns(columns);
+            this.SetColumnsView(columnsView);
         }
 
         public string GetFabricante()
@@ -59,7 +65,17 @@ namespace PIM_V.Models
             this._dataCompra = dataCompra;
         }
 
-        public int GetEquipamentoId()
+        public string GetDataReserva()
+        {
+            return this._dataReserva;
+        }
+
+        public void SetDataReserva(string dataReserva)
+        {
+            this._dataReserva = dataReserva;
+        }
+
+        public long? GetEquipamentoId()
         {
             return this._equipamentoId;
         }
@@ -71,15 +87,15 @@ namespace PIM_V.Models
 
         public string GetEquipamentoNome()
         {
-            return this._modelo;
+            return this._equipamentoNome;
         }
 
-        public void SetEquipamentoNome(string modelo)
+        public void SetEquipamentoNome(string equipamentoNome)
         {
-            this._modelo = modelo;
+            this._equipamentoNome = equipamentoNome;
         }
         
-        public int GetUsuarioId()
+        public long? GetUsuarioId()
         {
             return this._usuarioId;
         }
@@ -91,12 +107,12 @@ namespace PIM_V.Models
         
         public string GetUsuarioNome()
         {
-            return this._modelo;
+            return this._usuarioNome;
         }
 
-        public void SetUsuarioNome(string modelo)
+        public void SetUsuarioNome(string usuarioNome)
         {
-            this._modelo = modelo;
+            this._usuarioNome = usuarioNome;
         }
 
         public override Dictionary<string, string> ToDict()
@@ -109,13 +125,20 @@ namespace PIM_V.Models
             return dict;
         }
 
-        protected override void SetValues(object[] value)
+        protected override void SetValues(object[] value, bool view = false)
         {
             this.SetId((long)value[0]);
             this.SetFabricante((string)value[1]);
             this.SetModelo((string)value[2]);
             this.SetDataCompra((string)value[3]);
-            this.SetEquipamentoId((int)value[4]);
+            this.SetDataReserva((string)value[4]);
+            this.SetEquipamentoNome((string)value[5]);
+            this.SetUsuarioNome((string)value[6]);
+            if (!view)
+            {
+                this.SetEquipamentoId((int)value[7]);
+                this.SetUsuarioId((int)value[8]);
+            }
         }
     }
 }
