@@ -15,7 +15,7 @@ namespace PIM_V.Models
             this.SetTableName("usuarios");
             string[] columns =
             {
-                "id", "nome", "login", "senha", "email"
+                "id", "nome", "login", "email", "senha"
             };
             string[] columnsView =
             {
@@ -80,8 +80,11 @@ namespace PIM_V.Models
             this.SetId((long)value[0]);
             this.SetNome((string)value[1]);
             this.SetLogin((string)value[2]);
-            this.SetSenha((string)value[3]);
-            this.SetEmail((string)value[4]);
+            this.SetEmail((string)value[3]);
+            if (!view)
+            {
+                this.SetSenha((string)value[4]);
+            }
         }
     }
 }

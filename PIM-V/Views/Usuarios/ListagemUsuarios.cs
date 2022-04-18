@@ -6,13 +6,13 @@ using PIM_V.Classes;
 using PIM_V.Models;
 using System.Linq;
 
-namespace PIM_V.Views.Equipamentos
+namespace PIM_V.Views.Usuarios
 {
-    public partial class ListagemEquipamentos : Form
+    public partial class ListagemUsuarios : Form
     {
         private Collection _collection;
 
-        public ListagemEquipamentos()
+        public ListagemUsuarios()
         {
             InitializeComponent();
         }
@@ -27,9 +27,9 @@ namespace PIM_V.Views.Equipamentos
             ArrayList selectedRows = this.GetSelectedRow();
             foreach (DataRow row in selectedRows)
             {
-                Equipamento equipamento = new Equipamento();
-                equipamento.Find((long)row[0]);
-                equipamento.Delete();
+                Usuario usuario = new Usuario();
+                usuario.Find((long)row[0]);
+                usuario.Delete();
             }
             
             this.FillList();
@@ -62,16 +62,16 @@ namespace PIM_V.Views.Equipamentos
 
         public void FillList()
         {
-            Equipamento equipamento = new Equipamento();
-            Collection collection = equipamento.GetAll(true);
+            Usuario usuario = new Usuario();
+            Collection collection = usuario.GetAll(true);
             this.SetCollection(collection);
             this.dataGridView1.DataSource = collection.GetDataTable();
         }
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            AddEquipamentos addForm = new AddEquipamentos(this);
-            addForm.Show();
+            // AddEquipamentos addForm = new AddEquipamentos(this);
+            // addForm.Show();
         }
 
         private void editButton_Click(object sender, EventArgs e)
@@ -85,8 +85,8 @@ namespace PIM_V.Views.Equipamentos
             {
                 foreach (DataRow row in selectedRows)
                 {
-                    EditEquipamentos edit = new EditEquipamentos(this,(long)row[0]);
-                    edit.Show();
+                    // EditEquipamentos edit = new EditEquipamentos(this,(long)row[0]);
+                    // edit.Show();
                 }
             }
         }

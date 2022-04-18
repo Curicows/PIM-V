@@ -105,6 +105,8 @@
         <Compile Include="Views\Equipamentos\ListagemEquipamentos.Designer.cs">
           <DependentUpon>ListagemEquipamentos.cs</DependentUpon>
         </Compile>
+        <Compile Include="Views\Usuarios\ListagemUsuarios.cs" />
+        <Compile Include="Views\Usuarios\ListagemUsuarios.Designer.cs" />
         <EmbeddedResource Include="LoginForm.resx">
           <DependentUpon>LoginForm.cs</DependentUpon>
         </EmbeddedResource>
@@ -126,6 +128,7 @@
         <EmbeddedResource Include="Views\Equipamentos\ListagemEquipamentos.resx">
           <DependentUpon>ListagemEquipamentos.cs</DependentUpon>
         </EmbeddedResource>
+        <EmbeddedResource Include="Views\Usuarios\ListagemUsuarios.resx" />
         <None Include="packages.config" />
         <None Include="Properties\Settings.settings">
             <Generator>SettingsSingleFileGenerator</Generator>
