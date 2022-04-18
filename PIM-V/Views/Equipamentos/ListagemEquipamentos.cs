@@ -23,6 +23,22 @@ namespace PIM_V.Views.Equipamentos
 
         private void removeButton_Click(object sender, EventArgs e)
         {
+            int[] selectedRows = this.GetSelectedRow();
+            foreach (int rowId in selectedRows)
+            {
+                if (rowId != 0) {
+                    DataRow row = this._collection.GetDataTable().Rows[rowId];
+                    Equipamento equipamento = new Equipamento();
+                    equipamento.Find((long)row[0]);
+                    equipamento.Delete();
+                }
+            }
+            
+            this.FillList();
+        }
+
+        private int[] GetSelectedRow()
+        {
             int[] selectedRows = new int[this.dataGridView1.SelectedCells.Count];
             int i = 0;
             foreach (DataGridViewCell selectedCell in this.dataGridView1.SelectedCells)
@@ -35,17 +51,7 @@ namespace PIM_V.Views.Equipamentos
                 i++;
             }
 
-            foreach (int rowId in selectedRows)
-            {
-                if (rowId != 0) {
-                    DataRow row = this._collection.GetDataTable().Rows[rowId];
-                    Equipamento equipamento = new Equipamento();
-                    equipamento.Find((long)row[0]);
-                    equipamento.Delete();
-                }
-            }
-
-            this.FillList();
+            return selectedRows;
         }
 
         public void FillList()
@@ -64,7 +70,22 @@ namespace PIM_V.Views.Equipamentos
 
         private void editButton_Click(object sender, EventArgs e)
         {
-            throw new System.NotImplementedException();
+            int[] selectedRows = this.GetSelectedRow();
+            if (selectedRows.Length > 1)
+            {
+                MessageBox.Show("É necessário selecionar somente 1 linha para editar.");
+            }
+            else
+            {
+                foreach (int rowId in selectedRows)
+                {
+                    if (rowId != 0) {
+                        DataRow row = this._collection.GetDataTable().Rows[rowId];
+                        EditEquipamentos edit = new EditEquipamentos(this,(long)row[0]);
+                        edit.Show();
+                    }
+                }
+            }
         }
         
         public void SetCollection(Collection collection)
