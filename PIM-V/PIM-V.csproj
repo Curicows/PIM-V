@@ -13,6 +13,7 @@
         <FileAlignment>512</FileAlignment>
         <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
         <Deterministic>true</Deterministic>
+        <ApplicationIcon>icon.ico</ApplicationIcon>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
         <PlatformTarget>AnyCPU</PlatformTarget>
@@ -149,6 +150,7 @@
         <EmbeddedResource Include="Views\Usuarios\AddUsuarios.resx" />
         <EmbeddedResource Include="Views\Usuarios\EditUsuarios.resx" />
         <EmbeddedResource Include="Views\Usuarios\ListagemUsuarios.resx" />
+        <None Include="icon.ico" />
         <None Include="packages.config" />
         <None Include="Properties\Settings.settings">
             <Generator>SettingsSingleFileGenerator</Generator>
