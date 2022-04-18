@@ -10,9 +10,12 @@ namespace PIM_V.Views.Equipamentos
     public partial class ListagemEquipamentos : Form
     {
         private Collection _collection;
+        private AddEquipamentos addForm;
+
         public ListagemEquipamentos()
         {
             InitializeComponent();
+            this.addForm = new AddEquipamentos(this);
         }
 
         private void ListagemEquipamentos_Load(object sender, EventArgs e)
@@ -47,17 +50,17 @@ namespace PIM_V.Views.Equipamentos
             this.FillList();
         }
 
-        private void FillList()
+        public void FillList()
         {
             Equipamento equipamento = new Equipamento();
-            Collection collection = equipamento.GetAll();
+            Collection collection = equipamento.GetAll(true);
             this.SetCollection(collection);
             this.dataGridView1.DataSource = collection.GetDataTable();
         }
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            throw new System.NotImplementedException();
+            this.addForm.Show();
         }
 
         private void editButton_Click(object sender, EventArgs e)
