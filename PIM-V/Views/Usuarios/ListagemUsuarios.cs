@@ -70,8 +70,8 @@ namespace PIM_V.Views.Usuarios
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            // AddEquipamentos addForm = new AddEquipamentos(this);
-            // addForm.Show();
+            AddUsuarios addForm = new AddUsuarios(this);
+            addForm.Show();
         }
 
         private void editButton_Click(object sender, EventArgs e)

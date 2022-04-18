@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using PIM_V.Classes;
+using PIM_V.Helpers;
 
 namespace PIM_V.Models
 {
@@ -55,9 +57,17 @@ namespace PIM_V.Models
             this._login = login;
         }
 
-        public void SetSenha(string senha) 
+        public void SetSenha(string senha, bool md5 = false) 
         {
-            this._senha = senha;
+            if (md5)
+            {
+                Md5Helper md5Helper = new Md5Helper();
+                this._senha = md5Helper.RetornarMd5(senha);
+            }
+            else
+            {
+                this._senha = senha;
+            }
         }
 
         public void SetEmail(string email) 
@@ -70,13 +80,16 @@ namespace PIM_V.Models
             Dictionary<string, string> dict = new Dictionary<string, string>();
             dict.Add("nome",this.GetNome());
             dict.Add("login",this.GetLogin());
-            dict.Add("senha",this.GetSenha());
             dict.Add("email",this.GetEmail());
+            dict.Add("senha",this.GetSenha());
             return dict;
         }
 
         protected override void SetValues(object[] value, bool view = false)
         {
+            if (value[2] == DBNull.Value)
+            {
+            }
             this.SetId((long)value[0]);
             this.SetNome((string)value[1]);
             this.SetLogin((string)value[2]);
