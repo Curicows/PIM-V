@@ -10,12 +10,10 @@ namespace PIM_V.Views.Equipamentos
     public partial class ListagemEquipamentos : Form
     {
         private Collection _collection;
-        private AddEquipamentos addForm;
 
         public ListagemEquipamentos()
         {
             InitializeComponent();
-            this.addForm = new AddEquipamentos(this);
         }
 
         private void ListagemEquipamentos_Load(object sender, EventArgs e)
@@ -60,7 +58,8 @@ namespace PIM_V.Views.Equipamentos
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            this.addForm.Show();
+            AddEquipamentos addForm = new AddEquipamentos(this);
+            addForm.Show();
         }
 
         private void editButton_Click(object sender, EventArgs e)
