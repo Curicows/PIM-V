@@ -15,10 +15,10 @@ namespace PIM_V.Models
         private string _dataReserva;
         private long? _equipamentoId;
         private string _equipamentoNome;
-        private Equipamento _equipamento;
+        private Equipamento _equipamento = new Equipamento();
         private long? _usuarioId;
         private string _usuarioNome;
-        private Usuario _usuario;
+        private Usuario _usuario = new Usuario();
         
         public Inventario()
         {
@@ -95,6 +95,19 @@ namespace PIM_V.Models
             this._equipamentoNome = equipamentoNome;
         }
         
+        public Equipamento GetEquipamento()
+        {
+            return this._equipamento;
+        }
+        
+        private void SetEquipamento()
+        {
+            if (this._equipamentoId != null)
+            {
+                this._equipamento.Find((long)this._equipamentoId);
+            }       
+        }
+        
         public long? GetUsuarioId()
         {
             return this._usuarioId;
@@ -113,6 +126,19 @@ namespace PIM_V.Models
         public void SetUsuarioNome(string usuarioNome)
         {
             this._usuarioNome = usuarioNome;
+        }
+        
+        public Usuario GetUsuario()
+        {
+            return this._usuario;
+        }
+        
+        private void SetUsuario()
+        {
+            if (this._usuarioId != null)
+            {
+                this._usuario.Find((long)this._usuarioId);
+            }       
         }
 
         public override Dictionary<string, string> ToDict()
@@ -137,7 +163,9 @@ namespace PIM_V.Models
             if (!view)
             {
                 this.SetEquipamentoId((int)value[7]);
+                this.SetEquipamento();
                 this.SetUsuarioId((int)value[8]);
+                this.SetUsuario();
             }
         }
     }
