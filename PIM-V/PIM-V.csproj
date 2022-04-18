@@ -79,7 +79,6 @@
         <Compile Include="LoginForm.Designer.cs">
             <DependentUpon>LoginForm.cs</DependentUpon>
         </Compile>
-        <Compile Include="Helpers\Md5Helper.cs" />
         <Compile Include="Migrations\Migration001.cs" />
         <Compile Include="Migrations\Migration002.cs" />
         <Compile Include="Migrations\Migration003.cs" />
