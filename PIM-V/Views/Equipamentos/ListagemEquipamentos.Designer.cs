@@ -31,6 +31,7 @@ namespace PIM_V.Views.Equipamentos
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListagemEquipamentos));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -112,6 +113,7 @@ namespace PIM_V.Views.Equipamentos
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(415, 334);
             this.MinimumSize = new System.Drawing.Size(415, 334);
             this.Name = "ListagemEquipamentos";

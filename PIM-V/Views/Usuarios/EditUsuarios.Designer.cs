@@ -31,6 +31,7 @@ namespace PIM_V.Views.Usuarios
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditUsuarios));
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.addButton = new System.Windows.Forms.Button();
@@ -166,6 +167,7 @@ namespace PIM_V.Views.Usuarios
             this.ClientSize = new System.Drawing.Size(399, 341);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(415, 380);
             this.MinimumSize = new System.Drawing.Size(415, 380);
             this.Name = "EditUsuarios";

@@ -31,6 +31,7 @@ namespace PIM_V.Views.Equipamentos
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddEquipamentos));
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.addButton = new System.Windows.Forms.Button();
@@ -90,6 +91,7 @@ namespace PIM_V.Views.Equipamentos
             this.Controls.Add(this.nomeTextBox);
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(415, 227);
             this.MinimumSize = new System.Drawing.Size(415, 227);
             this.Name = "AddEquipamentos";
