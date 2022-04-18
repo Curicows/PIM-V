@@ -24,8 +24,7 @@ namespace PIM_V.Views.Equipamentos
             this._equipamento.SetNome(nome);
             this._equipamento.Save();
             this.list.FillList();
-            this.Hide();
+            this.Close();
         }
-
     }
 }
