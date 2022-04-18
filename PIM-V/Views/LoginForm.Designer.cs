@@ -1,4 +1,4 @@
-﻿namespace PIM_V
+﻿namespace PIM_V.Views
 {
     partial class LoginForm
     {
@@ -131,6 +131,7 @@
             this.MaximumSize = new System.Drawing.Size(456, 264);
             this.MinimumSize = new System.Drawing.Size(456, 264);
             this.Name = "LoginForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

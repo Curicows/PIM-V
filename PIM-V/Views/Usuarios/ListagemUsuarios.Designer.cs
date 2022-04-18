@@ -137,7 +137,10 @@ namespace PIM_V.Views.Usuarios
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
+            this.MaximumSize = new System.Drawing.Size(640, 334);
+            this.MinimumSize = new System.Drawing.Size(640, 334);
             this.Name = "ListagemUsuarios";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Listagem de usuarios";
             this.Load += new System.EventHandler(this.ListagemEquipamentos_Load);
             this.panel1.ResumeLayout(false);

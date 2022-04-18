@@ -74,12 +74,6 @@
         <Compile Include="Classes\Model.cs" />
         <Compile Include="Helpers\Md5Helper.cs" />
         <Compile Include="Interfaces\iMigration.cs" />
-        <Compile Include="LoginForm.cs">
-            <SubType>Form</SubType>
-        </Compile>
-        <Compile Include="LoginForm.Designer.cs">
-            <DependentUpon>LoginForm.cs</DependentUpon>
-        </Compile>
         <Compile Include="Migrations\Migration001.cs" />
         <Compile Include="Migrations\Migration002.cs" />
         <Compile Include="Migrations\Migration003.cs" />
@@ -114,15 +108,18 @@
         <Compile Include="Views\Inventario\EditInventario.Designer.cs" />
         <Compile Include="Views\Inventario\ListagemInventario.cs" />
         <Compile Include="Views\Inventario\ListagemInventario.Designer.cs" />
+        <Compile Include="Views\LoginForm.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Views\LoginForm.Designer.cs">
+          <DependentUpon>LoginForm.cs</DependentUpon>
+        </Compile>
         <Compile Include="Views\Usuarios\AddUsuarios.cs" />
         <Compile Include="Views\Usuarios\AddUsuarios.Designer.cs" />
         <Compile Include="Views\Usuarios\EditUsuarios.cs" />
         <Compile Include="Views\Usuarios\EditUsuarios.Designer.cs" />
         <Compile Include="Views\Usuarios\ListagemUsuarios.cs" />
         <Compile Include="Views\Usuarios\ListagemUsuarios.Designer.cs" />
-        <EmbeddedResource Include="LoginForm.resx">
-          <DependentUpon>LoginForm.cs</DependentUpon>
-        </EmbeddedResource>
         <EmbeddedResource Include="Properties\Resources.resx">
             <Generator>ResXFileCodeGenerator</Generator>
             <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -145,6 +142,9 @@
         <EmbeddedResource Include="Views\Inventario\AddInventario.resx" />
         <EmbeddedResource Include="Views\Inventario\EditInventario.resx" />
         <EmbeddedResource Include="Views\Inventario\ListagemInventario.resx" />
+        <EmbeddedResource Include="Views\LoginForm.resx">
+          <DependentUpon>LoginForm.cs</DependentUpon>
+        </EmbeddedResource>
         <EmbeddedResource Include="Views\Usuarios\AddUsuarios.resx" />
         <EmbeddedResource Include="Views\Usuarios\EditUsuarios.resx" />
         <EmbeddedResource Include="Views\Usuarios\ListagemUsuarios.resx" />
