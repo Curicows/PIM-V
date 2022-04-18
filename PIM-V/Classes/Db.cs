@@ -20,7 +20,6 @@ namespace PIM_V.Classes
         {
             string exePath = System.Reflection.Assembly.GetExecutingAssembly().Location;
             string directoryPath = System.IO.Path.GetDirectoryName(exePath);
-            directoryPath = directoryPath.Replace("\\bin\\Debug","");
             string dataSource = $"{directoryPath}\\database.sqlite";
             
             bool fileExist = File.Exists(dataSource);

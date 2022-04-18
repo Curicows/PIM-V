@@ -8,7 +8,7 @@ namespace PIM_V.Classes
     public class Migration
     {
         private Db _database;
-        private readonly IIMigration[] _migrations = {new Migration001(), new Migration002(), new Migration003()};
+        private readonly IIMigration[] _migrations = {new Migration001(), new Migration002(), new Migration003(), new Migration004()};
 
         public void Migrate()
         {

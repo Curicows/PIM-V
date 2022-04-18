@@ -77,6 +77,7 @@
         <Compile Include="Migrations\Migration001.cs" />
         <Compile Include="Migrations\Migration002.cs" />
         <Compile Include="Migrations\Migration003.cs" />
+        <Compile Include="Migrations\Migration004.cs" />
         <Compile Include="Models\Equipamento.cs" />
         <Compile Include="Models\Inventario.cs" />
         <Compile Include="Models\Usuario.cs" />
