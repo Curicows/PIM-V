@@ -58,6 +58,11 @@ namespace PIM_V.Classes
             this.FillModel(dataTable);
         }
 
+        public DataTable CustomSql(string sql, bool insert = false)
+        {
+            return this._database.CustomSql(sql, insert);
+        }
+
         public string GetTableName()
         {
             return this._tableName;
