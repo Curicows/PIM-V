@@ -85,8 +85,9 @@ namespace PIM_V.Views.Usuarios
             {
                 foreach (DataRow row in selectedRows)
                 {
-                    // EditEquipamentos edit = new EditEquipamentos(this,(long)row[0]);
-                    // edit.Show();
+                    EditUsuarios edit = new EditUsuarios(this,(long)row[0]);
+                    edit.Show();
+                    break;
                 }
             }
         }
