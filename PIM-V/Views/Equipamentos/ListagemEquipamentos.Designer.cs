@@ -37,7 +37,6 @@ namespace PIM_V.Views.Equipamentos
             this.addButton = new System.Windows.Forms.Button();
             this.removeButton = new System.Windows.Forms.Button();
             this.editButton = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -63,10 +62,13 @@ namespace PIM_V.Views.Equipamentos
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataGridView1.Location = new System.Drawing.Point(0, 102);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(399, 193);
             this.dataGridView1.TabIndex = 1;
             // 
@@ -100,20 +102,11 @@ namespace PIM_V.Views.Equipamentos
             this.editButton.UseVisualStyleBackColor = true;
             this.editButton.Click += new System.EventHandler(this.editButton_Click);
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.CustomFormat = "D/M/Y";
-            this.dateTimePicker1.Location = new System.Drawing.Point(124, 171);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 5;
-            // 
             // ListagemEquipamentos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(399, 295);
-            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.editButton);
             this.Controls.Add(this.removeButton);
             this.Controls.Add(this.addButton);
@@ -128,8 +121,6 @@ namespace PIM_V.Views.Equipamentos
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
         }
-
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
 
         private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.Button removeButton;
