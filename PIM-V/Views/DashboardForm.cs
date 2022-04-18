@@ -45,5 +45,10 @@ namespace PIM_V.Views
             ListagemInventario inventario = new ListagemInventario();
             inventario.Show();
         }
+
+        private void DashboardForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
