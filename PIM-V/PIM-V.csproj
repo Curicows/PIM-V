@@ -106,6 +106,8 @@
         <Compile Include="Views\Equipamentos\ListagemEquipamentos.Designer.cs">
           <DependentUpon>ListagemEquipamentos.cs</DependentUpon>
         </Compile>
+        <Compile Include="Views\Inventario\ListagemInventario.cs" />
+        <Compile Include="Views\Inventario\ListagemInventario.Designer.cs" />
         <Compile Include="Views\Usuarios\AddUsuarios.cs" />
         <Compile Include="Views\Usuarios\AddUsuarios.Designer.cs" />
         <Compile Include="Views\Usuarios\EditUsuarios.cs" />
@@ -133,6 +135,7 @@
         <EmbeddedResource Include="Views\Equipamentos\ListagemEquipamentos.resx">
           <DependentUpon>ListagemEquipamentos.cs</DependentUpon>
         </EmbeddedResource>
+        <EmbeddedResource Include="Views\Inventario\ListagemInventario.resx" />
         <EmbeddedResource Include="Views\Usuarios\AddUsuarios.resx" />
         <EmbeddedResource Include="Views\Usuarios\EditUsuarios.resx" />
         <EmbeddedResource Include="Views\Usuarios\ListagemUsuarios.resx" />
