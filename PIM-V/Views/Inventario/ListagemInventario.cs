@@ -70,8 +70,8 @@ namespace PIM_V.Views.Inventario
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            // AddUsuarios addForm = new AddUsuarios(this);
-            // addForm.Show();
+            AddInventario addForm = new AddInventario(this);
+            addForm.Show();
         }
 
         private void editButton_Click(object sender, EventArgs e)

@@ -80,7 +80,7 @@ namespace PIM_V.Models
             return this._equipamentoId;
         }
 
-        public void SetEquipamentoId(int equipamentoId)
+        public void SetEquipamentoId(long equipamentoId)
         {
             this._equipamentoId = equipamentoId;
         }
@@ -113,7 +113,7 @@ namespace PIM_V.Models
             return this._usuarioId;
         }
 
-        public void SetUsuarioId(int usuarioId)
+        public void SetUsuarioId(long usuarioId)
         {
             this._usuarioId = usuarioId;
         }
@@ -147,7 +147,11 @@ namespace PIM_V.Models
             dict.Add("fabricante",this.GetFabricante());
             dict.Add("modelo",this.GetModelo());
             dict.Add("data_compra",this.GetDataCompra());
+            dict.Add("data_reserva",this.GetDataReserva());
+            dict.Add("nome_equipamento",this.GetEquipamentoNome());
+            dict.Add("nome_usuario",this.GetUsuarioNome());
             dict.Add("equipamento_id",this.GetEquipamentoId().ToString());
+            dict.Add("usuario_id",this.GetUsuarioId().ToString());
             return dict;
         }
 
@@ -157,7 +161,7 @@ namespace PIM_V.Models
             this.SetFabricante((string)value[1]);
             this.SetModelo((string)value[2]);
             this.SetDataCompra((string)value[3]);
-            this.SetDataReserva((string)value[4]);
+            this.SetDataReserva(value[4].ToString());
             this.SetEquipamentoNome((string)value[5]);
             this.SetUsuarioNome((string)value[6]);
             if (!view)
