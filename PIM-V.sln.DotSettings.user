@@ -5,8 +5,9 @@
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=PIM_002DV_002FViews_002FEquipamentos_002FAddEquipamentos/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=PIM_002DV_002FViews_002FEquipamentos_002FEditEquipamentos/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=PIM_002DV_002FViews_002FEquipamentos_002FListagemEquipamentos/@EntryIndexedValue">True</s:Boolean>
-	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=PIM_002DV_002FViews_002FUsuarios_002FAddUsuarios/@EntryIndexedValue">True</s:Boolean>
-	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=PIM_002DV_002FViews_002FUsuarios_002FEditUsuarios/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=PIM_002DV_002FViews_002FInventario_002FListagemInventario/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=PIM_002DV_002FViews_002FUsuarios_002FAddUsuarios/@EntryIndexedValue">False</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=PIM_002DV_002FViews_002FUsuarios_002FEditUsuarios/@EntryIndexedValue">False</s:Boolean>
 	
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=PIM_002DV_002FViews_002FUsuarios_002FListagemUsuarios/@EntryIndexedValue">False</s:Boolean>
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/Initialized/@EntryValue">True</s:Boolean>
