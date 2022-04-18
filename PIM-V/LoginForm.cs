@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using PIM_V.Views.Equipamentos;
+using PIM_V.Models;
+using PIM_V.Views;
 
 namespace PIM_V
 {
@@ -18,10 +12,25 @@ namespace PIM_V
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void loginButton_Click(object sender, EventArgs e)
         {
-            ListagemEquipamentos lista = new ListagemEquipamentos();
-            lista.Show();
+            string login = this.loginTextBox.Text;
+            string senha = this.senhaTextBox.Text;
+            this.Login(login, senha);
+        }
+
+        private void Login(string login, string senha)
+        {
+            Usuario usuario = new Usuario();
+            usuario.SetLogin(login);
+            usuario.SetSenha(senha, true);
+            bool auth = usuario.Authenticate();
+            if (auth)
+            {
+                DashboardForm dashboardForm = new DashboardForm(usuario);
+                dashboardForm.Show();
+                this.Hide();
+            }
         }
     }
 }

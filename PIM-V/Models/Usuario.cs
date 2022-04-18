@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Windows.Forms;
 using PIM_V.Classes;
 using PIM_V.Helpers;
 
@@ -98,6 +100,30 @@ namespace PIM_V.Models
             {
                 this.SetSenha((string)value[4]);
             }
+        }
+
+        public bool Authenticate()
+        {
+            DataTable dataTable = this.GetUsuarioAuth();
+            Usuario user = new Usuario();
+            if (dataTable.Rows.Count > 0)
+            {
+                user.FillModel(dataTable);
+                if (user.GetSenha() == this.GetSenha())
+                {
+                    return true;
+                }
+                MessageBox.Show("Senha incorreta!");
+                return false;
+            }
+            MessageBox.Show("Usuário não encontrado!");
+            return false;
+        }
+
+        private DataTable GetUsuarioAuth()
+        {
+            string sql = $"select id, nome, login, email, senha from usuarios where login = '{this.GetLogin()}'";
+            return this.CustomSql(sql);
         }
     }
 }

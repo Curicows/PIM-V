@@ -88,6 +88,8 @@
         <Compile Include="Models\Usuario.cs" />
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
+        <Compile Include="Views\DashboardForm.cs" />
+        <Compile Include="Views\DashboardForm.Designer.cs" />
         <Compile Include="Views\Equipamentos\AddEquipamentos.cs">
           <SubType>Form</SubType>
         </Compile>
@@ -130,6 +132,7 @@
             <AutoGen>True</AutoGen>
             <DependentUpon>Resources.resx</DependentUpon>
         </Compile>
+        <EmbeddedResource Include="Views\DashboardForm.resx" />
         <EmbeddedResource Include="Views\Equipamentos\AddEquipamentos.resx">
           <DependentUpon>AddEquipamentos.cs</DependentUpon>
         </EmbeddedResource>
