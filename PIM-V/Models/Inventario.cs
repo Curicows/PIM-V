@@ -166,9 +166,9 @@ namespace PIM_V.Models
             this.SetUsuarioNome((string)value[6]);
             if (!view)
             {
-                this.SetEquipamentoId((int)value[7]);
+                this.SetEquipamentoId((long)value[7]);
                 this.SetEquipamento();
-                this.SetUsuarioId((int)value[8]);
+                this.SetUsuarioId((long)value[8]);
                 this.SetUsuario();
             }
         }

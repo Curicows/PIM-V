@@ -76,20 +76,20 @@ namespace PIM_V.Views.Inventario
 
         private void editButton_Click(object sender, EventArgs e)
         {
-            // ArrayList selectedRows = this.GetSelectedRow();
-            // if (selectedRows.Count > 1)
-            // {
-            //     MessageBox.Show("É necessário selecionar somente 1 linha para editar.");
-            // }
-            // else
-            // {
-            //     foreach (DataRow row in selectedRows)
-            //     {
-            //         EditUsuarios edit = new EditUsuarios(this,(long)row[0]);
-            //         edit.Show();
-            //         break;
-            //     }
-            // }
+            ArrayList selectedRows = this.GetSelectedRow();
+            if (selectedRows.Count > 1)
+            {
+                MessageBox.Show("É necessário selecionar somente 1 linha para editar.");
+            }
+            else
+            {
+                foreach (DataRow row in selectedRows)
+                {
+                    EditInventario edit = new EditInventario(this,(long)row[0]);
+                    edit.Show();
+                    break;
+                }
+            }
         }
         
         public void SetCollection(Collection collection)
