@@ -209,7 +209,10 @@ namespace PIM_V.Views.Inventario
             this.ClientSize = new System.Drawing.Size(399, 477);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.MaximumSize = new System.Drawing.Size(415, 516);
+            this.MinimumSize = new System.Drawing.Size(415, 516);
             this.Name = "EditInventario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Editar inventario";
             this.Load += new System.EventHandler(this.AddInventario_Load);
             this.panel1.ResumeLayout(false);

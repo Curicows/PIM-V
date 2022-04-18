@@ -112,6 +112,7 @@
             this.MaximumSize = new System.Drawing.Size(311, 274);
             this.MinimumSize = new System.Drawing.Size(311, 274);
             this.Name = "DashboardForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema de reservas";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);

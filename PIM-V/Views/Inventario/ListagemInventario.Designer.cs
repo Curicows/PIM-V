@@ -140,6 +140,7 @@ namespace PIM_V.Views.Inventario
             this.MaximumSize = new System.Drawing.Size(947, 334);
             this.MinimumSize = new System.Drawing.Size(947, 334);
             this.Name = "ListagemInventario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inventário";
             this.Load += new System.EventHandler(this.ListagemEquipamentos_Load);
             this.panel1.ResumeLayout(false);

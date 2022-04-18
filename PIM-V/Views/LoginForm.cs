@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
 using PIM_V.Models;
-using PIM_V.Views;
 
-namespace PIM_V
+namespace PIM_V.Views
 {
     public partial class LoginForm : Form
     {

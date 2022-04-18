@@ -115,6 +115,7 @@ namespace PIM_V.Views.Equipamentos
             this.MaximumSize = new System.Drawing.Size(415, 334);
             this.MinimumSize = new System.Drawing.Size(415, 334);
             this.Name = "ListagemEquipamentos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Listagem de equipamentos";
             this.Load += new System.EventHandler(this.ListagemEquipamentos_Load);
             this.panel1.ResumeLayout(false);

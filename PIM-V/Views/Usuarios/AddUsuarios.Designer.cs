@@ -169,6 +169,7 @@ namespace PIM_V.Views.Usuarios
             this.MaximumSize = new System.Drawing.Size(415, 380);
             this.MinimumSize = new System.Drawing.Size(415, 380);
             this.Name = "AddUsuarios";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Adicionar usuário";
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

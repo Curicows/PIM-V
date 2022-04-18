@@ -115,7 +115,7 @@ namespace PIM_V.Views.Inventario
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.fabricanteTextBox);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 74);
+            this.panel2.Location = new System.Drawing.Point(0, 66);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(399, 403);
             this.panel2.TabIndex = 5;
@@ -206,10 +206,13 @@ namespace PIM_V.Views.Inventario
             // 
             // AddInventario
             // 
-            this.ClientSize = new System.Drawing.Size(399, 477);
+            this.ClientSize = new System.Drawing.Size(399, 469);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.MaximumSize = new System.Drawing.Size(415, 508);
+            this.MinimumSize = new System.Drawing.Size(415, 508);
             this.Name = "AddInventario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Adicionar inventario";
             this.Load += new System.EventHandler(this.AddInventario_Load);
             this.panel1.ResumeLayout(false);

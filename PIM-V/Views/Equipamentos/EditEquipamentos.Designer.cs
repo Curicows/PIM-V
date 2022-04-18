@@ -93,6 +93,7 @@ namespace PIM_V.Views.Equipamentos
             this.MaximumSize = new System.Drawing.Size(415, 227);
             this.MinimumSize = new System.Drawing.Size(415, 227);
             this.Name = "EditEquipamentos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Editar equipamento";
             this.Load += new System.EventHandler(this.EditEquipamentos_Load);
             this.panel1.ResumeLayout(false);
